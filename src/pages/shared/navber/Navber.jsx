@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../../src/assets/green-camp-logo-vector-removebg-preview.png";
 const Navber = () => {
   const navItem = (
@@ -55,7 +55,7 @@ const Navber = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn-primary">Login</button>
+        <Link to="/login"><button className="btn-primary">Login</button></Link>
       </div>
     </div>
   );
