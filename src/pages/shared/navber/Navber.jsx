@@ -45,8 +45,8 @@ const Navber = () => {
           </ul>
         </div>
        <div className="flex justify-center items-center">
-       <div className="h-12 w-12"> <img src={logo} alt="" /></div>
-       <h2 className="text-2xl font-semibold uppercase text-gray-700">Reunion</h2>
+       <div className="h-8 w-8 md:h-12 md:w-12"> <img src={logo} alt="" /></div>
+       <h2 className="text-xl md:text-2xl font-semibold uppercase text-gray-700">Reunion</h2>
        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
