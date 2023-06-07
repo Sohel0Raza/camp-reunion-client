@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+body{
+  font-family: 'Cinzel', serif;
+}
+.active{
+    @apply  tracking-wide text-green-700 transition-colors duration-200
+  }
+  
+  .default{
+    @apply  text-gray-700 transition-colors duration-200 hover:text-gray-400
+  }
+  .btn-primary{
+    @apply md:mb-0 py-1 px-4 md:px-8 md:py-2 text-lg rounded  text-white bg-green-700 hover:bg-gray-500
+  }
+  .btn-secondary{
+    @apply md:mb-0  px-2 py-1 md:px-4 md:py-1 m-3 text-xs rounded-full  text-white bg-cyan-500 hover:bg-amber-500
+  }
+  .btn-outlined{
+    @apply  transition duration-200  shadow-md mt-3  md:mb-0  px-3 py-1 md:px-6 md:py-2 rounded-lg uppercase hover:bg-amber-400 hover:border-transparent hover:text-white
+  }
