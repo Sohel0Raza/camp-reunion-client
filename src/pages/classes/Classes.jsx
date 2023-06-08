@@ -1,13 +1,25 @@
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import useClass from "../../hooks/useClass";
+import ClassCart from "./ClassCart";
 
 const Classes = () => {
-    return (
-        <>
-        <Helmet>
-            <title>CampReunion | Classes</title>
-        </Helmet>
-        </>
-    );
+  const [classes] = useClass();
+  console.log(classes);
+  return (
+    <>
+      <Helmet>
+        <title>CampReunion | Classes</title>
+      </Helmet>
+      <div>
+        <h2 className="pt-24 pb-10 text-center font-mono text-white text-3xl bg-gray-700">All Class</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10 font-mono">
+        {classes.map((cl) => (
+          <ClassCart key={cl.class_name} cl={cl}></ClassCart>
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Classes;
