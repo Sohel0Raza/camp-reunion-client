@@ -14,7 +14,7 @@ const Classes = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10 font-mono">
         {classes.map((cl) => (
-          <ClassCart key={cl.class_name} cl={cl}></ClassCart>
+          <ClassCart key={cl._id} cl={cl}></ClassCart>
         ))}
       </div>
     </>

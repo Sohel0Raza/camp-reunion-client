@@ -4,7 +4,7 @@ const useClass = () => {
     const {refetch, data: classes=[], isLoading: loading} = useQuery({
         queryKey:['classes'],
         queryFn: async()=>{
-            const res = await fetch('class.json')
+            const res = await fetch('http://localhost:5000/allClass')
             return res.json()
         }
     })

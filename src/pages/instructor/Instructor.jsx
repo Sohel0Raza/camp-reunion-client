@@ -17,7 +17,7 @@ const Instructor = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10 font-mono">
           {classes.map((instructor) => (
-            <InstructorCart key={instructor.class_name} instructor={instructor}></InstructorCart>
+            <InstructorCart key={instructor._id} instructor={instructor}></InstructorCart>
           ))}
         </div>
       </>
