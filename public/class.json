@@ -13,7 +13,7 @@
     "image": "https://img.freepik.com/free-photo/football-trainer-teaching-his-pupils_23-2149707965.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
     "instructor_name": "Sarah Johnson",
     "instructor_email": "johnson@gmail.com",
-    "instructor_image": "https://img.freepik.com/premium-photo/handsome-young-male-instructor-fitness-center_488220-12423.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
+    "instructor_image": "https://img.freepik.com/free-photo/front-view-trainer-talking-players_23-2149742084.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
     "available_seats": 22,
     "price": 180
   },
@@ -22,7 +22,7 @@
     "image": "https://img.freepik.com/premium-photo/badminton-player-orange-uniform-ready-serve_8595-27591.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
     "instructor_name": "Michael Anderson",
     "instructor_email": "anderson@gmail.com",
-    "instructor_image": "https://img.freepik.com/premium-photo/personal-trainer-takes-notes-clipboard_600776-41303.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
+    "instructor_image": "https://img.freepik.com/premium-photo/handsome-young-male-instructor-fitness-center_488220-12423.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
     "available_seats": 12,
     "price": 150
   },
@@ -31,7 +31,7 @@
     "image": "https://img.freepik.com/free-photo/people-playing-padle-tennis-inside_23-2149444613.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
     "instructor_name": "Emily Wilson",
     "instructor_email": "wilson@gmail.com",
-    "instructor_image": "[Image URL]",
+    "instructor_image": "https://img.freepik.com/premium-photo/portrait-personal-trainer-holding-clipboard-with-training-plan-gym_629665-1943.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
     "available_seats": 12,
     "price": 160
   },
@@ -74,9 +74,9 @@
   {
     "class_name": "Archery  Class",
     "image": "https://img.freepik.com/premium-photo/portrait-female-athlete-practicing-archery-stadium_519356-2562.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
-    "instructor_name": "Benjamin Adams",
+    "instructor_name": "Olivia Adams",
     "instructor_email": "benjamin@gmail.com",
-    "instructor_image": "https://img.freepik.com/premium-photo/portrait-personal-trainer-holding-clipboard-with-training-plan-gym_629665-1943.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
+    "instructor_image": "https://img.freepik.com/free-photo/kids-playing-football-supervised-by-football-trainer_23-2149684437.jpg?size=626&ext=jpg&uid=R103361368&ga=GA1.2.809703881.1679658415&semt=ais",
     "available_seats": 12,
     "price": 140
   }

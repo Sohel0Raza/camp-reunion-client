@@ -17,6 +17,12 @@ const Navber = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? "active" : "default")}
+        to="/instructor"
+      >
+        Instructor
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "active" : "default")}
         to="/aboutus"
       >
         About Us

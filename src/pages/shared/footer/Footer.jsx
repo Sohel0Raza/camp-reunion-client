@@ -1,7 +1,8 @@
+import './Footer.css'
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer p-10 bg-neutral text-neutral-content">
+    <div className='footer-item'>
+      <footer className="footer p-10  text-neutral-content">
         <div>
           <span className="footer-title">Services</span>
           <a className="link link-hover">Classes</a>
@@ -53,7 +54,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className=" bg-neutral text-neutral-content text-center pb-4">
+      <div className="text-neutral-content text-center pb-4">
         <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
       </div>
     </div>

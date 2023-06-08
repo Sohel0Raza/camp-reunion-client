@@ -4,7 +4,6 @@ import ClassCart from "./ClassCart";
 
 const Classes = () => {
   const [classes] = useClass();
-  console.log(classes);
   return (
     <>
       <Helmet>
