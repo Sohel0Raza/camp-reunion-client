@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../../components/socialLogin/SocialLogin";
 const SignUp = () => {
   const { createUser, updateUserData } = useContext(AuthContext);
   const {
@@ -161,12 +162,13 @@ const SignUp = () => {
               <div className="form-control mt-6">
                 <input className="btn-primary" type="submit" value="Sign Up" />
               </div>
-              <p className="mt-3 text-white">
-               <small> Have an account ?</small>
+              <p className="mt-1 text-white">
+                <small> Have an account ?</small>
                 <Link to="/login">
                   <span className="text-lime-500 font-semibold"> Login</span>
                 </Link>
-              </p>
+              </p>          
+              <SocialLogin/>
             </div>
           </form>
         </div>
