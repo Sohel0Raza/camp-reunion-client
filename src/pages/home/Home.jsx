@@ -1,6 +1,7 @@
 import Banner from "./banner/Banner";
 import {Helmet} from "react-helmet";
 import PopularClasses from "./popularClasses/PopularClasses";
+import PopulerInstructor from "./populerInstructor/PopulerInstructor";
 
 const Home = () => {
     return (
@@ -9,7 +10,8 @@ const Home = () => {
                 <title>CampReunion | Home</title>
             </Helmet>
             <Banner/>
-            <PopularClasses></PopularClasses>
+            <PopularClasses/>
+            <PopulerInstructor/>
         </div>
     );
 };

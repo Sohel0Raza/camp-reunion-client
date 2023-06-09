@@ -17,7 +17,7 @@ const PopularClasses = () => {
         ))}
       </div>
        <div className="text-center p-5 md:my-5">
-       <Link to="/classes"><button className="btn-info">All Class</button></Link>
+       <Link to="/classes"><button className="btn-info">See All Class</button></Link>
        </div>
     </div>
   );
