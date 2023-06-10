@@ -4,9 +4,11 @@ import { MdMenuBook, MdOutlinePayment, MdPayments } from "react-icons/md";
 import { ImMan } from "react-icons/im";
 import { FaBook, FaHome, FaUserAlt } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
+import useCheckInstructor from "../hooks/useCheckInstructor";
 const Dashboard = () => {
   const [isAdmin] = useAdmin()
-  const isInstructor = false;
+  const [isInstructor] = useCheckInstructor()
+  
   return (
     <div className="md:w-10/12 mx-auto">
       <div className="drawer drawer-mobile">
