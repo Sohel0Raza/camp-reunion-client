@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import usePopularClass from "../../../hooks/usePopularClass";
 import PopularClassCart from "./PopularClassCart";
+import FadeLoader from "react-spinners/FadeLoader";
 
 const PopularClasses = () => {
-  const [popularClass] = usePopularClass();
+  const [popularClass,loading] = usePopularClass();
+  if(loading){
+    return <div className="flex items-center justify-center md:mt-52"><FadeLoader color="#36d7b7" /></div>
+  }
   return (
     <div className="mb-10">
       <h3 className="text-4xl text-center my-10 uppercase">Popular Class</h3>

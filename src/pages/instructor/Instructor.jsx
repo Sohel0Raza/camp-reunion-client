@@ -1,9 +1,13 @@
 import { Helmet } from "react-helmet";
 import useClass from "../../hooks/useClass";
 import InstructorCart from "./InstructorCart";
+import FadeLoader from "react-spinners/FadeLoader";
 
 const Instructor = () => {
-  const [classes] = useClass();
+  const [classes, loading] = useClass();
+  if(loading){
+    return <div className="flex items-center justify-center md:py-28"><FadeLoader color="#36d7b7" /></div>
+  }
   return (
     <div>
       <>

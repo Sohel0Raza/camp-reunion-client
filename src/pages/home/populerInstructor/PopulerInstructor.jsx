@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import useInstructor from "../../../hooks/useInstructor";
 import PopularInstructorCart from "./PopularInstructorCart";
+import FadeLoader from "react-spinners/FadeLoader";
 
 const PopulerInstructor = () => {
-  const [populerInstructor] = useInstructor();
+  const [populerInstructor, loading] = useInstructor();
+  if(loading){
+    return <div className="flex items-center justify-center md:mt-52"><FadeLoader color="#36d7b7" /></div>
+  }
   return (
     <div>
       <h3 className="text-4xl text-center my-10 uppercase">
