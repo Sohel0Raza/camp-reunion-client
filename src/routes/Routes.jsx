@@ -9,6 +9,7 @@ import Instructor from "../pages/instructor/Instructor";
 import Dashboard from "../layout/Dashboard";
 import SelectedClasses from "../pages/Dashboard/selectedClasses/SelectedClasses";
 import PrivateRoute from "./PrivateRoute";
+import AllUser from "../pages/Dashboard/adminDashboard/mangeUser/AllUser";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/instructor",
-        element: <Instructor />,
+        element:<Instructor />,
       },
       {
         path: "/login",
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path:'selectClass',
         element:<SelectedClasses/>
+      },
+      {
+        path:'users',
+        element:<AllUser/>
       }
     ]
   },

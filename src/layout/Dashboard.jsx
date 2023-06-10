@@ -1,9 +1,11 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { GrCheckboxSelected } from "react-icons/gr";
-import {  MdMenuBook, MdOutlinePayment, MdPayments } from "react-icons/md";
+import { MdMenuBook, MdOutlinePayment, MdPayments } from "react-icons/md";
 import { ImMan } from "react-icons/im";
-import { FaHome } from "react-icons/fa";
+import { FaBook, FaHome, FaUserAlt } from "react-icons/fa";
 const Dashboard = () => {
+  const isAdmin = true;
+  const isInstructor = false;
   return (
     <div className="md:w-10/12 mx-auto">
       <div className="drawer drawer-mobile">
@@ -23,6 +25,38 @@ const Dashboard = () => {
             <div className="ml-4 my-10">
               <li className="font-bold text-2xl">Camp Reunion</li>
             </div>
+            {isAdmin? (
+              <>
+                <li>
+                  <NavLink to="/dashboard/selectClass">
+                    <FaBook></FaBook>
+                    Manage  Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/users">
+                    <FaUserAlt></FaUserAlt>
+                    Manage User
+                  </NavLink>
+                </li>
+              </>
+            ) :
+            isInstructor ? (
+              <>
+                <li>
+                  <NavLink to="/dashboard/selectClass">
+                    <GrCheckboxSelected></GrCheckboxSelected>
+                    Add a Class
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/home">
+                    <MdOutlinePayment></MdOutlinePayment>
+                    My Classes
+                  </NavLink>
+                </li>
+              </>
+            ): <>
             <li>
               <NavLink to="/dashboard/selectClass">
                 <GrCheckboxSelected></GrCheckboxSelected>
@@ -41,25 +75,26 @@ const Dashboard = () => {
                 Payment History
               </NavLink>
             </li>
+            </>}
             <hr className="text-white my-10" />
-          <li>
-            <NavLink to="/">
-              <FaHome />
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/classes">
-              <MdMenuBook />
-              All Class
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/instructor">
-              <ImMan></ImMan>
-              All Instructor
-            </NavLink>
-          </li>
+            <li>
+              <NavLink to="/">
+                <FaHome />
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/classes">
+                <MdMenuBook />
+                All Class
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/instructor">
+                <ImMan></ImMan>
+                All Instructor
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
