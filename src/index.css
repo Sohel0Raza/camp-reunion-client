@@ -25,3 +25,9 @@ body{
   .btn-outlined{
     @apply  md:font-medium  transition duration-200  shadow-md my-2  md:mb-0  px-3 py-1 md:px-7 md:py-2 md:text-lg rounded  text-white hover:bg-green-700 hover:border-transparent border-2 border-green-200 hover:text-white
   }
+  .drawer-side a.active{
+    color: white;
+  }
+  .drawer-side a{
+    background-color: transparent;
+  }

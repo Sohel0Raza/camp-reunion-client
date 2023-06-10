@@ -48,9 +48,9 @@ const Navber = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? "active" : "default")}
-        to="/aboutus"
+        to="/dashboard"
       >
-        About Us
+        Dashboard
       </NavLink>
     </>
   );
