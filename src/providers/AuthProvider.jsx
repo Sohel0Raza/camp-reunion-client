@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import axios from "axios";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -14,14 +15,14 @@ import { useEffect } from "react";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider()
+const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -29,24 +30,37 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const updateUserData =(name, photo) =>{
-    return  updateProfile(auth.currentUser, {
-          displayName: name , photoURL: photo
-      })
-  }    
-  
-  const signInWithGoogle = () =>{
-    setLoading(true)
-    return signInWithPopup(auth, googleProvider)
-  }
-  const logOut = () =>{
-    setLoading(true)
-    return signOut(auth)
-  }
+  const updateUserData = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
+
+  const signInWithGoogle = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
       setUser(currentUser);
+      console.log("currentUser", currentUser);
+      // get and set token
+      if (currentUser) {
+        axios
+          .post("http://localhost:5000/jwt", { email: currentUser?.email })
+          .then((data) => {
+            localStorage.setItem("access-token", data.data.token);
+            setLoading(false);
+          });
+      }
+      else {
+        localStorage.removeItem("access-token");
+      }
     });
     return () => {
       unsubscribe();
@@ -59,7 +73,7 @@ const AuthProvider = ({ children }) => {
     updateUserData,
     signIn,
     signInWithGoogle,
-    logOut
+    logOut,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

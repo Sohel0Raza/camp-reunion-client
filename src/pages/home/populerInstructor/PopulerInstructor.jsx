@@ -6,7 +6,7 @@ import FadeLoader from "react-spinners/FadeLoader";
 const PopulerInstructor = () => {
   const [populerInstructor, loading] = useInstructor();
   if(loading){
-    return <div className="flex items-center justify-center md:mt-52"><FadeLoader color="#36d7b7" /></div>
+    return <div className="flex items-center justify-center md:my-20"><FadeLoader color="#36d7b7" /></div>
   }
   return (
     <div>

@@ -6,7 +6,7 @@ import FadeLoader from "react-spinners/FadeLoader";
 const PopularClasses = () => {
   const [popularClass,loading] = usePopularClass();
   if(loading){
-    return <div className="flex items-center justify-center md:mt-52"><FadeLoader color="#36d7b7" /></div>
+    return <div className="flex items-center justify-center md:my-28"><FadeLoader color="#36d7b7" /></div>
   }
   return (
     <div className="mb-10">
