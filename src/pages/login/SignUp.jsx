@@ -1,13 +1,17 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./SignUp.css";
 import Swal from "sweetalert2";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import { AuthContext } from "../../providers/AuthProvider";
 import SocialLogin from "../../components/socialLogin/SocialLogin";
 const SignUp = () => {
   const { createUser, updateUserData } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -43,6 +47,7 @@ const SignUp = () => {
               });
             }
           });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         if (error) {
@@ -57,9 +62,9 @@ const SignUp = () => {
 
   return (
     <>
-    <Helmet>
-      <title>CampReunion | Sign Up</title>
-    </Helmet>
+      <Helmet>
+        <title>CampReunion | Sign Up</title>
+      </Helmet>
       <div className="hero min-h-screen signin-item">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card flex-shrink-0 w-full max-w-sm">

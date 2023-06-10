@@ -1,6 +1,31 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../../src/assets/green-camp-logo-vector-removebg-preview.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 const Navber = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "User Log Out Successful",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        if (error) {
+          Swal.fire({
+            icon: "error",
+            title: "Error...",
+            text: `${error}`,
+          });
+        }
+      });
+  };
   const navItem = (
     <>
       <NavLink
@@ -56,18 +81,44 @@ const Navber = () => {
             {navItem}
           </ul>
         </div>
-       <div className="flex justify-center items-center">
-       <div className="h-8 w-8 md:h-12 md:w-12"> <img src={logo} alt="" /></div>
-       <h2 className="text-xl md:text-2xl font-semibold uppercase">Reunion</h2>
-       </div>
+        <div className="flex justify-center items-center">
+          <div className="h-8 w-8 md:h-12 md:w-12">
+            {" "}
+            <img src={logo} alt="" />
+          </div>
+          <h2 className="text-xl md:text-2xl font-semibold uppercase">
+            Reunion
+          </h2>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-semibold space-x-7">
-            {navItem}
+          {navItem}
         </ul>
       </div>
-      <div className="navbar-end">
-        <Link to="/login"><button className="btn-primary">Login</button></Link>
+      <div className="navbar-end md:mr-10">
+        {user ? (
+          <>
+            <div className="flex justify-between items-center">
+              <div className="h-7 w-7 mr-3">
+                <img
+                  className="h-full w-full rounded-full"
+                  src={user?.photoURL}
+                  alt=""
+                />
+              </div>
+              <button className="" onClick={handleLogOut}>
+                SIGN OUT
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <button className="btn-primary">Login</button>
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
