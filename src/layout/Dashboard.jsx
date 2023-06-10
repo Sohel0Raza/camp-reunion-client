@@ -3,8 +3,9 @@ import { GrCheckboxSelected } from "react-icons/gr";
 import { MdMenuBook, MdOutlinePayment, MdPayments } from "react-icons/md";
 import { ImMan } from "react-icons/im";
 import { FaBook, FaHome, FaUserAlt } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
 const Dashboard = () => {
-  const isAdmin = true;
+  const [isAdmin] = useAdmin()
   const isInstructor = false;
   return (
     <div className="md:w-10/12 mx-auto">
