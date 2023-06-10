@@ -8,6 +8,7 @@ import ErrorPage from "../pages/errorPage/ErrorPage";
 import Instructor from "../pages/instructor/Instructor";
 import Dashboard from "../layout/Dashboard";
 import SelectedClasses from "../pages/Dashboard/selectedClasses/SelectedClasses";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children:[
       {
         path:'selectClass',

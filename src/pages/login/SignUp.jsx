@@ -21,23 +21,35 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        reset();
-        if (loggedUser) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "SingUp SuccessFully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
         updateUserData(data.name, data.photo)
-          .then(() => {})
+          .then(() => {
+            const saveUser = {name: data.name, email:data.email}
+            fetch("http://localhost:5000/users",{
+              method:'POST',
+              headers:{
+                'content-type':'application/json'
+              },
+              body: JSON.stringify(saveUser)
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  reset();
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "SingUp SuccessFully",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                }
+                navigate(from, { replace: true });
+              });
+          })
           .catch((error) => {
             if (error) {
               Swal.fire({
@@ -47,7 +59,6 @@ const SignUp = () => {
               });
             }
           });
-        navigate(from, { replace: true });
       })
       .catch((error) => {
         if (error) {

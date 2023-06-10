@@ -8,12 +8,12 @@ const PrivateRoute = ({children}) => {
     const location = useLocation()
 
     if(loading){
-        return <FadeLoader color="#36d7b7" />
+        <FadeLoader color="#36d7b7" />
     }
     if(user){
         return children
     }
-    return <Navigate to="/login" state={{from: location}} replace></Navigate>
+    return <Navigate to="/login" state={{from: location}}></Navigate>
     
 };
 
