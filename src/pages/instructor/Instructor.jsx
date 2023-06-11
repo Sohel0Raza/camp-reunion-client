@@ -5,6 +5,7 @@ import FadeLoader from "react-spinners/FadeLoader";
 
 const Instructor = () => {
   const [classes, loading] = useClass();
+  const allClass = classes.filter(cls=> cls.status !== 'pending' && cls.status !== 'denied')
   if(loading){
     return <div className="flex items-center justify-center md:py-28"><FadeLoader color="#36d7b7" /></div>
   }
@@ -20,7 +21,7 @@ const Instructor = () => {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10 font-mono">
-          {classes.map((instructor) => (
+          {allClass.map((instructor) => (
             <InstructorCart key={instructor._id} instructor={instructor}></InstructorCart>
           ))}
         </div>

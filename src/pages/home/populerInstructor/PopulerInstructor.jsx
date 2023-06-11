@@ -5,6 +5,7 @@ import FadeLoader from "react-spinners/FadeLoader";
 
 const PopulerInstructor = () => {
   const [populerInstructor, loading] = useInstructor();
+  const allPopulerInstructor = populerInstructor.filter(pinst=> pinst.status !== 'pending' && pinst.status !== 'denied')
   if(loading){
     return <div className="flex items-center justify-center md:my-20"><FadeLoader color="#36d7b7" /></div>
   }
@@ -15,7 +16,7 @@ const PopulerInstructor = () => {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
         {
-            populerInstructor.map(instructor => <PopularInstructorCart 
+            allPopulerInstructor.slice(0,6).map(instructor => <PopularInstructorCart 
                 key={instructor._id}
                 instructor={instructor}
             ></PopularInstructorCart>)

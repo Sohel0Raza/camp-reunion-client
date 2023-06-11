@@ -5,10 +5,14 @@ import { ImMan } from "react-icons/im";
 import { FaBook, FaHome, FaUserAlt } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 import useCheckInstructor from "../hooks/useCheckInstructor";
+import FadeLoader from "react-spinners/FadeLoader";
+
 const Dashboard = () => {
-  const [isAdmin] = useAdmin()
-  const [isInstructor] = useCheckInstructor()
-  
+  const [isAdmin, isAdminLoading] = useAdmin()
+  const [isInstructor, isInstructorLoading] = useCheckInstructor()
+  if(isAdminLoading || isInstructorLoading){
+    return <div className="flex items-center justify-center md:my-20"><FadeLoader color="#36d7b7" /></div>
+  }
   return (
     <div className="md:w-10/12 mx-auto">
       <div className="drawer drawer-mobile">
@@ -31,7 +35,7 @@ const Dashboard = () => {
             {isAdmin? (
               <>
                 <li>
-                  <NavLink to="/dashboard/selectClass">
+                  <NavLink to="/dashboard/manageClass">
                     <FaBook></FaBook>
                     Manage  Classes
                   </NavLink>

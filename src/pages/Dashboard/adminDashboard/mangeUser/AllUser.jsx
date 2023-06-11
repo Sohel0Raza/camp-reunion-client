@@ -66,7 +66,7 @@ const AllUser = () => {
                 <td>{user.email}</td>
                 <td>{user.role || "student"}</td>
                 <th>
-                  {user.role === "admin" ? (
+                  {user.role === "admin" || user.role === "instructor" ? (
                     <button
                       disabled={disable}
                       className="btn btn-ghost btn-xs bg-orange-400 text-white"
@@ -83,7 +83,7 @@ const AllUser = () => {
                   )}
                 </th>
                 <th>
-                  {user.role === "instructor" ? (
+                  {user.role === "instructor" || user.role === "admin" ? (
                     <button
                       disabled={disable}
                       className="btn btn-ghost btn-xs bg-green-400 text-white"

@@ -5,6 +5,8 @@ import FadeLoader from "react-spinners/FadeLoader";
 
 const PopularClasses = () => {
   const [popularClass,loading] = usePopularClass();
+  const allPopularClass = popularClass.filter(cls=> cls.status !== 'pending' && cls.status !== 'denied')
+
   if(loading){
     return <div className="flex items-center justify-center md:my-28"><FadeLoader color="#36d7b7" /></div>
   }
@@ -12,7 +14,7 @@ const PopularClasses = () => {
     <div className="mb-10">
       <h3 className="text-4xl text-center my-10 uppercase">Popular Class</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:p-0">
-        {popularClass.map((popularCl) => (
+        {allPopularClass.slice(0,6).map((popularCl) => (
           <PopularClassCart 
           key={popularCl._id}
           popularCl={popularCl}

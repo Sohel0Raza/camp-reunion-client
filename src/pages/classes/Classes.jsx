@@ -5,7 +5,7 @@ import FadeLoader from "react-spinners/FadeLoader";
 
 const Classes = () => {
   const [classes, loading] = useClass();
-  const allClass = classes.filter(cls=> cls.status !== 'pending')
+  const allClass = classes.filter(cls=> cls.status !== 'pending' && cls.status !== 'denied')
   if(loading){
     return <div className="flex items-center justify-center md:py-28"><FadeLoader color="#36d7b7" /></div>
   }
