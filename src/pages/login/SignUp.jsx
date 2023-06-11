@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../providers/AuthProvider";
 import SocialLogin from "../../components/socialLogin/SocialLogin";
+
+
 const SignUp = () => {
   const { createUser, updateUserData } = useContext(AuthContext);
   const navigate = useNavigate();

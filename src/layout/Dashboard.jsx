@@ -47,7 +47,7 @@ const Dashboard = () => {
             isInstructor ? (
               <>
                 <li>
-                  <NavLink to="/dashboard/selectClass">
+                  <NavLink to="/dashboard/addClass">
                     <GrCheckboxSelected></GrCheckboxSelected>
                     Add a Class
                   </NavLink>

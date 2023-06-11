@@ -69,7 +69,6 @@ const AllUser = () => {
                   {user.role === "admin" ? (
                     <button
                       disabled={disable}
-                      onClick={() => handleMakeAdmin(user)}
                       className="btn btn-ghost btn-xs bg-orange-400 text-white"
                     >
                       Make Admin
