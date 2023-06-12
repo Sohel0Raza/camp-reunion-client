@@ -1,7 +1,6 @@
 import Swal from "sweetalert2";
 import useClass from "../../../../hooks/useClass";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const ManageClass = () => {
   const [classes, , refetch] = useClass();

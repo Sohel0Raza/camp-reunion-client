@@ -12,6 +12,7 @@ const ClassCart = ({ cl }) => {
   const [isInstructor] = useCheckInstructor();
 
   const [disable, setDisable] = useState(true)
+  const [disabled, setDisabled] = useState(false)
 
   const { _id, class_name, image, instructor_name, available_seats, price } =
     cl;
@@ -22,6 +23,7 @@ const ClassCart = ({ cl }) => {
   const location = useLocation();
 
   const handleEnrrolClassCart = () => {
+    setDisabled(true)
     const selectClass = {
       selectClassId: _id,
       class_name,
@@ -81,7 +83,7 @@ const ClassCart = ({ cl }) => {
         { isInstructor? (
           <div className="card-actions">
             <button
-             disabled={disable}
+             disabled={disabled}
               className="btn btn-ghost btn-sm"
             >
               Select Now
@@ -100,6 +102,7 @@ const ClassCart = ({ cl }) => {
         <div className="card-actions">
             <button
               onClick={() => handleEnrrolClassCart(cl)}
+            disabled={disabled}
               className="btn-secondary"
             >
               Select Now

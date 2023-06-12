@@ -2,6 +2,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import useSelectClass from "../../../hooks/useSelectClass";
 import Swal from "sweetalert2";
 import FadeLoader from "react-spinners/FadeLoader";
+import { Link } from "react-router-dom";
 
 const SelectedClasses = () => {
   const [selectClass, isLoading, refetch] = useSelectClass();
@@ -70,20 +71,22 @@ const SelectedClasses = () => {
                 </td>
                 <td className="font-bold">{seClass.class_name}</td>
                 <td>{seClass.instructor_name}</td>
-                <th>$ {seClass.price}</th>
-                <th>
+                <td>$ {seClass.price}</td>
+                <td>
                   <button
                     onClick={() => handleDelete(seClass)}
                     className="btn btn-ghost btn-xs bg-red-600 text-white"
                   >
                     <FaTrashAlt />
                   </button>
-                </th>
-                <th>
-                  <button className="btn btn-ghost btn-xs bg-green-600 text-white">
-                    Pay
-                  </button>
-                </th>
+                </td>
+                <td>
+                  <Link to={`/dashboard/payment/${seClass.selectClassId}`}>
+                    <button className="btn btn-ghost btn-xs bg-green-600 text-white">
+                      Pay
+                    </button>
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>
