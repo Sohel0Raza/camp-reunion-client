@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
-})
+  baseURL: "https://camp-reunion-server.vercel.app",
+});
 const useAxiosSecure = () => {
-    const navigate = useNavigate()
-    const {logOut} = useContext(AuthContext)
+  const navigate = useNavigate();
+  const { logOut } = useContext(AuthContext);
   useEffect(() => {
     axiosSecure.interceptors.request.use((config) => {
       const token = localStorage.getItem("access-token");
@@ -31,7 +31,7 @@ const useAxiosSecure = () => {
         return Promise.reject(error);
       }
     );
-  },[logOut, navigate]);
+  }, [logOut, navigate]);
   return [axiosSecure];
 };
 

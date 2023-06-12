@@ -1,14 +1,20 @@
-import { useQuery } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query";
 
 const usePopularClass = () => {
-        const {refetch, data: popularClass=[], isLoading: loading} = useQuery({
-            queryKey:['populerClass'],
-            queryFn: async()=>{
-                const res = await fetch('http://localhost:5000/populerClass')
-                return res.json()
-            }
-        })
-        return [popularClass, loading, refetch]
+  const {
+    refetch,
+    data: popularClass = [],
+    isLoading: loading,
+  } = useQuery({
+    queryKey: ["populerClass"],
+    queryFn: async () => {
+      const res = await fetch(
+        "https://camp-reunion-server.vercel.app/populerClass"
+      );
+      return res.json();
+    },
+  });
+  return [popularClass, loading, refetch];
 };
 
 export default usePopularClass;

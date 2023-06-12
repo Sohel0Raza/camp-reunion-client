@@ -7,7 +7,6 @@ import { Helmet } from "react-helmet";
 import { AuthContext } from "../../providers/AuthProvider";
 import SocialLogin from "../../components/socialLogin/SocialLogin";
 
-
 const SignUp = () => {
   const { createUser, updateUserData } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -29,13 +28,13 @@ const SignUp = () => {
         console.log(loggedUser);
         updateUserData(data.name, data.photo)
           .then(() => {
-            const saveUser = {name: data.name, email:data.email}
-            fetch("http://localhost:5000/users",{
-              method:'POST',
-              headers:{
-                'content-type':'application/json'
+            const saveUser = { name: data.name, email: data.email };
+            fetch("https://camp-reunion-server.vercel.app/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
               },
-              body: JSON.stringify(saveUser)
+              body: JSON.stringify(saveUser),
             })
               .then((res) => res.json())
               .then((data) => {

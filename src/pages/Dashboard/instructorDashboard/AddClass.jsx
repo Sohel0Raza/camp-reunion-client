@@ -4,41 +4,50 @@ import Swal from "sweetalert2";
 
 const AddClass = () => {
   const { user } = useContext(AuthContext);
-  const handleAddClass = event =>{
-    event.preventDefault()
-    
-    const form = event.target
+  const handleAddClass = (event) => {
+    event.preventDefault();
 
-    const class_name = form.class_name.value
-    const available_seats = parseFloat(form.available_seats.value)
-    const price = parseFloat(form.price.value) 
-    const instructor_name = form.instructor_name.value
-    const instructor_email = form.instructor_email.value
-    const image = form.image.value
-    const instructor_image = form.instructor_image.value
-    const status = form.status.value
-    const newClass = {class_name, image, instructor_name, instructor_image, instructor_email, available_seats, price,status}
-    console.log(newClass)
-    fetch('http://localhost:5000/allClass',{
-      method:"POST",
-      headers:{
-        'content-type':'application/json'
+    const form = event.target;
+
+    const class_name = form.class_name.value;
+    const available_seats = parseFloat(form.available_seats.value);
+    const price = parseFloat(form.price.value);
+    const instructor_name = form.instructor_name.value;
+    const instructor_email = form.instructor_email.value;
+    const image = form.image.value;
+    const instructor_image = form.instructor_image.value;
+    const status = form.status.value;
+    const newClass = {
+      class_name,
+      image,
+      instructor_name,
+      instructor_image,
+      instructor_email,
+      available_seats,
+      price,
+      status,
+    };
+    console.log(newClass);
+    fetch("https://camp-reunion-server.vercel.app/allClass", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify(newClass)
+      body: JSON.stringify(newClass),
     })
-    .then(res=> res.json())
-    .then(data =>{
-      console.log(data)
-      if(data.insertedId){
-        Swal.fire({
-          title: 'Success!',
-          text: 'Class Added Successfully',
-          icon: 'success',
-          confirmButtonText: 'OK'
-        })
-      }
-    })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Class Added Successfully",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }
+      });
+  };
   return (
     <div className="h-full w-full ">
       <div className=" p-5 md:p-10 bg-sky-100 rounded">

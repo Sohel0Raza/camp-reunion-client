@@ -11,8 +11,8 @@ const ClassCart = ({ cl }) => {
   const [isAdmin] = useAdmin();
   const [isInstructor] = useCheckInstructor();
 
-  const [disable, setDisable] = useState(true)
-  const [disabled, setDisabled] = useState(false)
+  const [disable, setDisable] = useState(true);
+  const [disabled, setDisabled] = useState(false);
 
   const { _id, class_name, image, instructor_name, available_seats, price } =
     cl;
@@ -23,7 +23,7 @@ const ClassCart = ({ cl }) => {
   const location = useLocation();
 
   const handleEnrollClassCart = () => {
-    setDisabled(true)
+    setDisabled(true);
     const selectClass = {
       selectClassId: _id,
       class_name,
@@ -33,7 +33,7 @@ const ClassCart = ({ cl }) => {
       email: user?.email,
     };
     if (user && user?.email) {
-      fetch("http://localhost:5000/selectClass", {
+      fetch("https://camp-reunion-server.vercel.app/selectClass", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -53,8 +53,7 @@ const ClassCart = ({ cl }) => {
             });
           }
         });
-    } 
-    else {
+    } else {
       Swal.fire({
         title: "Plase Login to Select class ",
         icon: "warning",
@@ -81,37 +80,31 @@ const ClassCart = ({ cl }) => {
           <p>Sets: {available_seats}</p>
           <p className="text-green-600">Price: ${price}</p>
         </div>
-        { isInstructor? (
+        {isInstructor ? (
           <div className="card-actions">
-            <button
-             disabled={disabled}
-              className="btn btn-ghost btn-sm"
-            >
+            <button disabled={disabled} className="btn btn-ghost btn-sm">
               Select Now
             </button>
           </div>
-        ) :  isAdmin?(
+        ) : isAdmin ? (
           <div className="card-actions">
-            <button
-             disabled={disable}
-             className="btn btn-ghost btn-sm"
-            >
+            <button disabled={disable} className="btn btn-ghost btn-sm">
               Select Now
             </button>
           </div>
-        ):
-        <div className="card-actions">
-           <Link >
-           <button
-              onClick={() => handleEnrollClassCart(cl)}
-            disabled={disabled}
-              className="btn-secondary"
-            >
-              Select Now
-            </button>
-           </Link>
+        ) : (
+          <div className="card-actions">
+            <Link>
+              <button
+                onClick={() => handleEnrollClassCart(cl)}
+                disabled={disabled}
+                className="btn-secondary"
+              >
+                Select Now
+              </button>
+            </Link>
           </div>
-        }
+        )}
       </div>
     </div>
   );

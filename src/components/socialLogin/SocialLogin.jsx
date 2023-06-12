@@ -20,7 +20,7 @@ const SocialLogin = () => {
           name: loggedUser.displayName,
           email: loggedUser.email,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://camp-reunion-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -29,15 +29,15 @@ const SocialLogin = () => {
         })
           .then((res) => res.json())
           .then(() => {
-              Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "SingUp SuccessFully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-              navigate(from, { replace: true });
-            })
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "SingUp SuccessFully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => {
         if (error) {

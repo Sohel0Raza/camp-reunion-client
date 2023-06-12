@@ -14,9 +14,12 @@ const ManageClass = () => {
   );
 
   const handleApproveClass = (newClass) => {
-    fetch(`http://localhost:5000/allClass/approv/${newClass._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://camp-reunion-server.vercel.app/allClass/approv/${newClass._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
@@ -32,9 +35,12 @@ const ManageClass = () => {
       });
   };
   const handleDenyClass = (newClass) => {
-    fetch(`http://localhost:5000/allClass/deny/${newClass._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://camp-reunion-server.vercel.app/allClass/deny/${newClass._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
@@ -134,10 +140,9 @@ const ManageClass = () => {
                   )}
                 </th>
                 <th>
-                  
-                    <button className="btn btn-ghost btn-xs bg-yellow-600 text-white">
-                      Feedback
-                    </button>
+                  <button className="btn btn-ghost btn-xs bg-yellow-600 text-white">
+                    Feedback
+                  </button>
                 </th>
               </tr>
             ))}
