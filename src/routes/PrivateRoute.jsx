@@ -8,7 +8,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation()
 
     if(loading){
-        return <div className="flex justify-center md:mt-52"><FadeLoader color="#36d7b7" /></div>
+         <div className="flex justify-center md:mt-52"><FadeLoader color="#36d7b7" /></div>
     }
     if(user){
         return children

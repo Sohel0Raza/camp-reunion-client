@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useSelectClass from "../../hooks/useSelectClass";
 import useAdmin from "../../hooks/useAdmin";
 import useCheckInstructor from "../../hooks/useCheckInstructor";
@@ -17,12 +17,12 @@ const ClassCart = ({ cl }) => {
   const { _id, class_name, image, instructor_name, available_seats, price } =
     cl;
 
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const [, , refetch] = useSelectClass();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleEnrrolClassCart = () => {
+  const handleEnrollClassCart = () => {
     setDisabled(true)
     const selectClass = {
       selectClassId: _id,
@@ -30,9 +30,9 @@ const ClassCart = ({ cl }) => {
       image,
       instructor_name,
       price,
-      email: user.email,
+      email: user?.email,
     };
-    if (user && user.email) {
+    if (user && user?.email) {
       fetch("http://localhost:5000/selectClass", {
         method: "POST",
         headers: {
@@ -53,7 +53,8 @@ const ClassCart = ({ cl }) => {
             });
           }
         });
-    } else {
+    } 
+    else {
       Swal.fire({
         title: "Plase Login to Select class ",
         icon: "warning",
@@ -100,13 +101,15 @@ const ClassCart = ({ cl }) => {
           </div>
         ):
         <div className="card-actions">
-            <button
-              onClick={() => handleEnrrolClassCart(cl)}
+           <Link >
+           <button
+              onClick={() => handleEnrollClassCart(cl)}
             disabled={disabled}
               className="btn-secondary"
             >
               Select Now
             </button>
+           </Link>
           </div>
         }
       </div>

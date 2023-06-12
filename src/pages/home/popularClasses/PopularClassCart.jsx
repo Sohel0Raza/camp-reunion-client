@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const PopularClassCart = ({ popularCl }) => {
   const { class_name, image, instructor_name, price } = popularCl;
@@ -12,11 +11,7 @@ const PopularClassCart = ({ popularCl }) => {
           <h2 className="font-bold text-2xl">{class_name}</h2>
           <p>Instructor: {instructor_name}</p>
           <p className="text-lime-400 font-semibold">Price: $ {price}</p>
-          <div className="mt-3">
-            <Link to="/classes">
-              <button className="btn-secondary">Select Now</button>
-            </Link>
-          </div>
+          
         </div>
       </div>
     </div>

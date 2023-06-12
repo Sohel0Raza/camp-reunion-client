@@ -2,7 +2,6 @@ import usePayment from "../../../hooks/usePayment";
 
 const EnrollClass = () => {
   const [paymentClass] = usePayment();
-  console.log(paymentClass);
   return (
     <div className="h-full w-full">
       <h3 className="text-4xl text-center my-10 uppercase">

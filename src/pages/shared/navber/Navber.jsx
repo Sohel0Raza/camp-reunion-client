@@ -3,7 +3,11 @@ import logo from "../../../../src/assets/green-camp-logo-vector-removebg-preview
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAdmin from "../../../hooks/useAdmin";
+import useCheckInstructor from "../../../hooks/useCheckInstructor";
 const Navber = () => {
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useCheckInstructor();
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
@@ -46,12 +50,36 @@ const Navber = () => {
       >
         Instructor
       </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? "active" : "default")}
-        to="/dashboard"
-      >
-        Dashboard
-      </NavLink>
+      {user?.email && isAdmin ? (
+        <>
+          
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "default")}
+            to="/dashboard/manageClass"
+          >
+            Dashboard
+          </NavLink>
+          
+        </>
+      ) :user?.email && isInstructor ? (
+        <>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "default")}
+            to="/dashboard/addClass"
+          >
+            Dashboard
+          </NavLink>
+        </>
+      ) : user?.email && <>
+      
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "default")}
+          to="/dashboard/selectClass"
+        >
+          Dashboard
+        </NavLink>
+      
+      </>}
     </>
   );
   return (
@@ -120,6 +148,7 @@ const Navber = () => {
           </>
         )}
       </div>
+      
     </div>
   );
 };
