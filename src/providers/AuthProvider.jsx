@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
       // get and set token
       if (currentUser) {
         axios
-          .post("https://camp-reunion-server.vercel.app/jwt", {
+          .post("https://camp-reunion-server-sohel0raza.vercel.app/jwt", {
             email: currentUser?.email,
           })
           .then((data) => {

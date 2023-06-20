@@ -33,7 +33,7 @@ const ClassCart = ({ cl }) => {
       email: user?.email,
     };
     if (user && user?.email) {
-      fetch("https://camp-reunion-server.vercel.app/selectClass", {
+      fetch("https://camp-reunion-server-sohel0raza.vercel.app/selectClass", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -25,7 +25,7 @@ const SelectedClasses = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://camp-reunion-server.vercel.app/selectClass/${seClass._id}`,
+          `https://camp-reunion-server-sohel0raza.vercel.app/selectClass/${seClass._id}`,
           {
             method: "DELETE",
           }

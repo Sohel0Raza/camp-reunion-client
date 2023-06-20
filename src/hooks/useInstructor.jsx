@@ -9,7 +9,7 @@ const useInstructor = () => {
     queryKey: ["populerInstructor"],
     queryFn: async () => {
       const res = await fetch(
-        "https://camp-reunion-server.vercel.app/populerInstructor"
+        "https://camp-reunion-server-sohel0raza.vercel.app/populerInstructor"
       );
       return res.json();
     },

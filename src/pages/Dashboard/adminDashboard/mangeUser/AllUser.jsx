@@ -6,9 +6,12 @@ const AllUser = () => {
   const [users, , refetch] = useUsers();
   const [disable, setDisable] = useState(true);
   const handleMakeAdmin = (user) => {
-    fetch(`https://camp-reunion-server.vercel.app/users/admin/${user?._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://camp-reunion-server-sohel0raza.vercel.app/users/admin/${user?._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
@@ -25,7 +28,7 @@ const AllUser = () => {
   };
   const handleMakeInstructor = (user) => {
     fetch(
-      `https://camp-reunion-server.vercel.app/users/instructor/${user?._id}`,
+      `https://camp-reunion-server-sohel0raza.vercel.app/users/instructor/${user?._id}`,
       {
         method: "PATCH",
       }
