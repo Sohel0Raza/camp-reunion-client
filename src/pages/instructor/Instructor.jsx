@@ -16,11 +16,11 @@ const Instructor = () => {
           <title>CampReunion | Classes</title>
         </Helmet>
         <div>
-          <h2 className="pt-24 pb-10 text-center font-mono text-white text-3xl bg-gray-700">
+          <h2 className="pt-24 pb-10 text-center  text-white text-3xl bg-gray-700">
             All Instructor
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10 font-mono">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10 ">
           {allClass.map((instructor) => (
             <InstructorCart key={instructor._id} instructor={instructor}></InstructorCart>
           ))}

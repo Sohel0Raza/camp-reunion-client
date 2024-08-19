@@ -1,10 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 body{
-  font-family: 'Cinzel', serif;
+  font-family: "Open Sans", sans-serif;
 }
 .active{
     @apply  tracking-wide text-green-700 transition-colors duration-200

@@ -28,7 +28,7 @@ const AddClass = () => {
       status,
     };
     console.log(newClass);
-    fetch("https://camp-reunion-server-sohel0raza.vercel.app/allClass", {
+    fetch("http://localhost:5000/allClass", {
       method: "POST",
       headers: {
         "content-type": "application/json",

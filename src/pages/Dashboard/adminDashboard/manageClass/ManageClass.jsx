@@ -15,7 +15,7 @@ const ManageClass = () => {
 
   const handleApproveClass = (newClass) => {
     fetch(
-      `https://camp-reunion-server-sohel0raza.vercel.app/allClass/approv/${newClass._id}`,
+      `http://localhost:5000/allClass/approv/${newClass._id}`,
       {
         method: "PATCH",
       }
@@ -36,7 +36,7 @@ const ManageClass = () => {
   };
   const handleDenyClass = (newClass) => {
     fetch(
-      `https://camp-reunion-server-sohel0raza.vercel.app/allClass/deny/${newClass._id}`,
+      `http://localhost:5000/allClass/deny/${newClass._id}`,
       {
         method: "PATCH",
       }

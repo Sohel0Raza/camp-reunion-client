@@ -8,7 +8,7 @@ const PopularInstructorCart = ({ instructor }) => {
     AOS.init();
   }, []);
   return (
-    <div className="card hover:bg-slate-100 hover:font-mono hover:text-green-700">
+    <div className="card hover:bg-slate-100 hover: hover:text-green-700">
       <div
         className=" px-10 pt-10 mx-auto"
         data-aos="fade-up"

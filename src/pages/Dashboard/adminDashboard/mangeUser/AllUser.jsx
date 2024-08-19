@@ -5,15 +5,18 @@ import { useState } from "react";
 const AllUser = () => {
   const [users, , refetch] = useUsers();
   const [disable, setDisable] = useState(true);
+  const token = localStorage.getItem("access-token");
+
   const handleMakeAdmin = (user) => {
-    fetch(
-      `https://camp-reunion-server-sohel0raza.vercel.app/users/admin/${user?._id}`,
-      {
-        method: "PATCH",
-      }
-    )
+    fetch(`http://localhost:5000/users/admin/${user?._id}`, {
+      method: "PATCH",
+      headers: {
+        authorization: `bearer ${token}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
+        console.log("✌️data --->", data);
         if (data.modifiedCount) {
           refetch();
           Swal.fire({
@@ -27,14 +30,15 @@ const AllUser = () => {
       });
   };
   const handleMakeInstructor = (user) => {
-    fetch(
-      `https://camp-reunion-server-sohel0raza.vercel.app/users/instructor/${user?._id}`,
-      {
-        method: "PATCH",
-      }
-    )
+    fetch(`http://localhost:5000/users/instructor/${user?._id}`, {
+      method: "PATCH",
+      headers: {
+        authorization: `bearer ${token}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
+        console.log("✌️data --->", data);
         if (data.modifiedCount) {
           refetch();
           Swal.fire({

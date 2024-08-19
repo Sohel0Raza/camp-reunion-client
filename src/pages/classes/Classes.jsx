@@ -15,9 +15,9 @@ const Classes = () => {
         <title>CampReunion | Classes</title>
       </Helmet>
       <div>
-        <h2 className="pt-24 pb-10 text-center font-mono text-white text-3xl bg-gray-700">All Class</h2>
+        <h2 className="pt-24 pb-10 text-center  text-white text-3xl bg-gray-700">All Class</h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10 font-mono">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10 ">
         {allClass.map((cl) => (
           <ClassCart key={cl._id} cl={cl}></ClassCart>
         ))}

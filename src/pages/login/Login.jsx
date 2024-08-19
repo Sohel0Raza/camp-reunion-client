@@ -72,10 +72,10 @@ const Login = () => {
       </Helmet>
       <div className="hero min-h-screen login-item">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card flex-shrink-0 shadow-2xl w-full max-w-sm">
+          <div className="card flex-shrink-0 shadow-inner shadow-black w-full max-w-sm">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body">
-                <h1 className="text-5xl font-bold">Login now!</h1>
+                <h1 className="text-4xl font-bold">Welcome Back</h1>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>

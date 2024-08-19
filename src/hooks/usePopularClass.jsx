@@ -9,7 +9,7 @@ const usePopularClass = () => {
     queryKey: ["populerClass"],
     queryFn: async () => {
       const res = await fetch(
-        "https://camp-reunion-server-sohel0raza.vercel.app/populerClass"
+        "http://localhost:5000/populerClass"
       );
       return res.json();
     },

@@ -33,7 +33,7 @@ const ClassCart = ({ cl }) => {
       email: user?.email,
     };
     if (user && user?.email) {
-      fetch("https://camp-reunion-server-sohel0raza.vercel.app/selectClass", {
+      fetch("http://localhost:5000/selectClass", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -71,7 +71,7 @@ const ClassCart = ({ cl }) => {
   return (
     <div className="card shadow-2xl bg-slate-100 hover:bg-gray-200">
       <figure>
-        <img src={image} alt="classes" />
+        <img className="transition-transform duration-300 transform hover:scale-125" src={image} alt="classes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{class_name}</h2>
@@ -82,7 +82,7 @@ const ClassCart = ({ cl }) => {
         </div>
         {isInstructor ? (
           <div className="card-actions">
-            <button disabled={disabled} className="btn btn-ghost btn-sm">
+            <button disabled={disable} className="btn btn-ghost btn-sm">
               Select Now
             </button>
           </div>

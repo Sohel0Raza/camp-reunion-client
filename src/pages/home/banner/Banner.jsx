@@ -14,7 +14,7 @@ const Banner = () => {
         <div className="absolute flex items-end left-0 top-0 h-full rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 21)]">
           <div className="text-white px-6 md:p-10 md:ml-10 md:mb-5">
             <Slide>
-              <h2 className="mt-5 md:mb-3 md:mt-0 md:text-5xl font-bold uppercase">
+              <h2 className="mt-5 md:mb-3 md:mt-0 md:text-5xl italic font-bold uppercase">
                 <span className="text-lime-500">Summer</span> <br /> Sports Camp
               </h2>
             </Slide>
@@ -33,7 +33,7 @@ const Banner = () => {
         <div className="absolute flex items-end left-0 top-0 h-full rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 21)]">
           <div className="text-white px-6 md:p-10 md:ml-10 md:mb-5">
             <Slide>
-              <h2 className="mt-5 mb-3 md:mt-0 md:text-5xl font-bold uppercase">
+              <h2 className="mt-5 mb-3 md:mt-0 md:text-5xl italic font-bold uppercase">
                 <span className="text-lime-500">Summer</span> <br /> Badminton
                 Camp
               </h2>
@@ -54,7 +54,7 @@ const Banner = () => {
         <div className="absolute flex items-end left-0 top-0 h-full rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 21)]">
           <div className="text-white px-6 md:p-10 md:ml-10 md:mb-5">
             <Slide>
-            <h2 className="mt-5 mb-3 md:mt-0 md:text-5xl font-bold uppercase">
+            <h2 className="mt-5 mb-3 md:mt-0 md:text-5xl italic font-bold uppercase">
               <span className="text-lime-500">Summer</span> <br /> Volleyball
               Camp
             </h2>
@@ -75,7 +75,7 @@ const Banner = () => {
         <div className="absolute flex items-end left-0 top-0 h-full rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 21)]">
           <div className="text-white px-6 md:p-10 md:ml-10 md:mb-5">
             <Slide>
-            <h2 className="mt-5 mb-3 md:mt-0 md:text-5xl font-bold uppercase">
+            <h2 className="mt-5 mb-3 md:mt-0 md:text-5xl italic font-bold uppercase">
               <span className="text-lime-500">Summer</span> <br /> Cricket Camp
             </h2>
             </Slide>
@@ -95,7 +95,7 @@ const Banner = () => {
         <div className="absolute flex items-end left-0 top-0 h-full rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 21)]">
           <div className="text-white px-6 md:p-10 md:ml-10 md:mb-5">
             <Slide>
-            <h2 className="mt-5 mb-3 md:mt-0 md:text-5xl font-bold uppercase">
+            <h2 className="mt-5 mb-3 md:mt-0 md:text-5xl italic font-bold uppercase">
               <span className="text-lime-500">Summer</span> <br />
               Soccer Camp
             </h2>

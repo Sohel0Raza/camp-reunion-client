@@ -41,18 +41,19 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
   };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("currentUser", currentUser);
       // get and set token
       if (currentUser) {
         axios
-          .post("https://camp-reunion-server-sohel0raza.vercel.app/jwt", {
+          .post("http://localhost:5000/jwt", {
             email: currentUser?.email,
           })
           .then((data) => {
@@ -67,6 +68,7 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+  
   const authInfo = {
     user,
     loading,

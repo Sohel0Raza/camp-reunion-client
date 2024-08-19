@@ -9,7 +9,7 @@ const useClass = () => {
     queryKey: ["classes"],
     queryFn: async () => {
       const res = await fetch(
-        "https://camp-reunion-server-sohel0raza.vercel.app/allClass"
+        "http://localhost:5000/allClass"
       );
       return res.json();
     },

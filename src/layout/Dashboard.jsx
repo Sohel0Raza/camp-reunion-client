@@ -41,7 +41,7 @@ const Dashboard = () => {
                 <div className="ml-4 my-10">
                   <li className="font-bold text-2xl">Camp Reunion</li>
                   <li className="font-bold text-xl mt-4">{user?.displayName}</li>
-                  <li className="font-mono text-yellow-200">A d m i n</li>
+                  <li className=" text-yellow-200">A d m i n</li>
                 </div>
                 <li>
                   <NavLink to="/dashboard/manageClass">
@@ -61,7 +61,7 @@ const Dashboard = () => {
               <div className="ml-4 my-10">
                   <li className="font-bold text-2xl">Camp Reunion</li>
                   <li className="font-bold text-xl mt-4">{user?.displayName}</li>
-                  <li className="font-mono text-yellow-200">I n s t r u c t o r</li>
+                  <li className=" text-yellow-200">I n s t r u c t o r</li>
                 </div>
                 <li>
                   <NavLink to="/dashboard/addClass">
@@ -81,7 +81,7 @@ const Dashboard = () => {
               <div className="ml-4 my-10">
                   <li className="font-bold text-2xl">Camp Reunion</li>
                   <li className="font-bold font-serif text-xl mt-4">{user?.displayName}</li>
-                  <li className="font-mono text-yellow-200">S t u d e n t</li>
+                  <li className=" text-yellow-200">S t u d e n t</li>
                 </div>
                 <li>
                   <NavLink to="/dashboard/selectClass">

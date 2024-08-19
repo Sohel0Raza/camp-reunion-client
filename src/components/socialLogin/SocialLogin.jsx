@@ -20,7 +20,7 @@ const SocialLogin = () => {
           name: loggedUser.displayName,
           email: loggedUser.email,
         };
-        fetch("https://camp-reunion-server-sohel0raza.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

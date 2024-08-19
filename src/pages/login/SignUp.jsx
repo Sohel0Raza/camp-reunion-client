@@ -29,7 +29,7 @@ const SignUp = () => {
         updateUserData(data.name, data.photo)
           .then(() => {
             const saveUser = { name: data.name, email: data.email };
-            fetch("https://camp-reunion-server-sohel0raza.vercel.app/users", {
+            fetch("http://localhost:5000/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -79,7 +79,7 @@ const SignUp = () => {
       </Helmet>
       <div className="hero min-h-screen signin-item">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card flex-shrink-0 w-full max-w-sm">
+          <div className="card flex-shrink-0 w-full shadow-inner shadow-black max-w-sm">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body">
                 <h1 className="text-5xl font-bold">Sign Up now!</h1>
