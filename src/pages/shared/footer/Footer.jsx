@@ -1,7 +1,6 @@
-import './Footer.css'
 const Footer = () => {
   return (
-    <div className='footer-item'>
+    <div className='bg-gradient-to-t from-black to-[#485056] border-t-2'>
       <footer className="footer p-10  text-neutral-content">
         <div>
           <span className="footer-title">Services</span>

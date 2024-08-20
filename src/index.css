@@ -1,28 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .active{
-    @apply  tracking-wide text-green-700 transition-colors duration-200
+    @apply  tracking-wide text-[#33f33d] transition-colors duration-200
   }
   
   .default{
-    @apply  text-white transition-colors duration-200 hover:text-gray-400
+    @apply transition-colors duration-200 hover:text-gray-400
   }
   .btn-primary{
-    @apply md:mb-0 py-1 px-4 md:px-8 md:py-2 text-lg rounded  text-white bg-green-700 hover:bg-gray-500
+    @apply md:mb-0 py-1 px-2 md:px-5 md:py-2 font-normal rounded  text-white bg-[#39878a] hover:bg-[#5798b4] hover:scale-105
   }
   .btn-secondary{
-    @apply md:mb-0  px-2 py-1 md:px-5 md:py-2 my-3 text-xs rounded-full bg-gradient-to-r from-lime-500 to-green-500 text-white
+    @apply md:mb-0  px-2 py-1 md:px-5 md:py-2 my-3 text-sm hover:scale-105 rounded-full bg-gradient-to-r from-lime-500 to-green-500 text-white
   }
   .btn-info{
-    @apply md:mb-0  px-2 py-1 md:px-8 md:py-3 my-3 text-lg uppercase rounded-lg shadow-md bg-gradient-to-r from-lime-500 to-green-500 text-white
+    @apply md:mb-0  px-2 py-1 md:px-6 shadow-inner shadow-black hover:scale-95 md:py-3 my-3 text-base rounded-lg bg-gradient-to-r from-lime-500 to-green-500 text-white
   }
   .btn-outlined{
-    @apply  md:font-medium  transition duration-200  shadow-md my-2  md:mb-0  px-3 py-1 md:px-7 md:py-2 md:text-lg rounded  text-white hover:bg-green-700 hover:border-transparent border-2 border-green-200 hover:text-white
+    @apply  transition duration-200  shadow-md my-2  md:mb-0  px-2 py-1 md:px-5 md:py-2 rounded  text-white hover:bg-[#39878a] hover:border-transparent border-2 border-[#a8dadc] hover:text-white
   }
   .drawer-side a.active{
     color: white ;
@@ -30,4 +30,8 @@ body{
   }
   .drawer-side a{
     background-color: transparent;
+  }
+
+  .textGD{
+    @apply bg-gradient-to-r from-[#e76f51] via-[#b0c8d1] to-[#2a9d8f] inline-block text-transparent bg-clip-text
   }

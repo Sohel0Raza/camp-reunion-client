@@ -70,8 +70,12 @@ const ClassCart = ({ cl }) => {
   };
   return (
     <div className="card shadow-2xl bg-slate-100 hover:bg-gray-200">
-      <figure>
-        <img className="transition-transform duration-300 transform hover:scale-125" src={image} alt="classes" />
+      <figure className="md:h-[230px] md:w-[350px]">
+        <img
+          className="transition-transform duration-300 transform hover:scale-125 h-full w-full"
+          src={image}
+          alt="classes"
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{class_name}</h2>

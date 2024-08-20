@@ -3,7 +3,7 @@ import { AiFillPhone, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineLocationOn } from "react-icons/md";
 const ContactUs = () => {
   return (
-    <div className="hero contact-item mb-10">
+    <div className="hero contact-item">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="md:w-1/2">
           <div className="w-full">
